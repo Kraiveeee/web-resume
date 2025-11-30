@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kervy Villamor G. Guadiz - Web Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    /* --- General Styles --- */
+    body {
+        font-family: 'Raleway', sans-serif;
+        margin:0; padding:0;
+        background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+        color:#fff;
+        overflow-x:hidden;
+    }
+    .container {
+        max-width:900px;
+        margin:auto;
+        padding:30px;
+    }
+    h1,h2 {
+        font-family:'Orbitron',sans-serif;
+        text-shadow:0 0 5px #00fff7,0 0 10px #39ff14;
+    }
+    hr {
+        border:0;
+        height:1px;
+        background:#00fff7;
+        margin:20px 0;
+    }
+
+    /* --- Header --- */
+    .header {
+        text-align:center;
+    }
+    .header .pictures {
+        display:flex;
+        justify-content:center;
+        gap:20px;
+        margin-top:20px;
+        flex-wrap:wrap;
+    }
+    .header .pictures img {
+        width:150px;
+        height:150px;
+        object-fit:cover;
+        border-radius:15px;
+        border:3px solid #00fff7;
+        transition: transform 0.5s, box-shadow 0.5s;
+    }
+    .header .pictures img:hover {
+        transform: scale(1.2) rotate(5deg);
+        box-shadow:0 0 20px #00fff7;
+    }
+    .contact-info {
+        margin-top:15px;
+        font-size:0.9rem;
+        color:#39ff14;
+    }
+    .contact-info a {
+        color:#00fff7;
+        text-decoration:none;
+    }
+
+    /* --- Sections --- */
+    .section {
+        margin-bottom:30px;
+        padding:20px;
+        border-radius:15px;
+        background: rgba(0,255,255,0.05);
+        border:1px solid rgba(0,255,255,0.3);
+        backdrop-filter: blur(10px);
+        opacity:0;
+        transform:translateY(50px);
+        transition: all 1s ease-out;
+    }
+    .section h2 {
+        color:#00fff7;
+        margin-bottom:10px;
+    }
+    .section ul {
+        list-style:square inside;
+        padding-left:0;
+    }
+    .section ul li {
+        margin-bottom:5px;
+    }
+
+    /* --- Footer --- */
+    .footer {
+        text-align:center;
+        font-size:0.8rem;
+        margin-top:30px;
+        color:#39ff14;
+        text-shadow:0 0 5px #39ff14;
+    }
+
+    @media(max-width:600px){
+        .header .pictures {
+            flex-direction:column;
+            align-items:center;
+        }
+        .header .pictures img {
+            width:120px;
+            height:120px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Kervy V. Guadiz</h1>
+        <div class="pictures">
+            
+            <img src="image/abnormal.jpg" alt="Picture 2">
+           
+        </div>
+        <div class="contact-info">
+            87 Nitang Gulod, Novaliches, Quezon City | 0961-498-2261 | 
+            <a href="mailto:kervyguadiz0@gmail.com">kervyguadiz0@gmail.com</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Objective -->
+    <div class="section">
+        <h2>Objective</h2>
+        <p>To obtain a position where I can apply my developing knowledge in medical and laboratory concepts while demonstrating strong work ethic, adaptability, and teamwork. Seeking opportunities that will help prepare me for future professional roles in the healthcare field.</p>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <h2>Educational Background</h2>
+        <ul>
+            <li><strong>New Era University</strong> – 2nd Year College (Ongoing)</li>
+            <li><strong>Our Lady of Fatima University</strong> – Senior High School Graduate</li>
+        </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Fast learner and adaptable</li>
+            <li>Adept in teamwork and collaboration</li>
+            <li>Strong leadership qualities</li>
+            <li>Effective communication skills</li>
+            <li>Basic computer and technical proficiency</li>
+            <li>Works efficiently under pressure</li>
+        </ul>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <h2>Work Experience</h2>
+        <h3>Customer Service Representative (CSR) – Alorica Philippines</h3>
+        <ul>
+            <li>Handled customer concerns and inquiries professionally</li>
+            <li>Maintained high-quality service and communication</li>
+            <li>Demonstrated patience and fast problem-solving</li>
+            <li>Developed resilience and time management in a fast-paced environment</li>
+        </ul>
+    </div>
+
+    <!-- References -->
+    <div class="section">
+        <h2>Character References</h2>
+        <p>Regine P. Pardo &emsp;-&emsp;09940273507 </p>
+        <p>Rene Espina &emsp;-&emsp;09764573259 </p>
+        <p>Wayne Andy Villamor &emsp;-&emsp;09619220946 </p>
+    </div>
+
+    <div class="footer">
+        Kervy V. Guadiz
+    </div>
+
+</div>
+
+<script>
+    // Animate sections on scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.style.opacity=1;
+                entry.target.style.transform='translateY(0)';
+            }
+        });
+    }, {threshold:0.3});
+    sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
